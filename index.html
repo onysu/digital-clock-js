@@ -28,19 +28,19 @@
             var m = jam.getMinutes(); //0-59
             var d = jam.getSeconds(); //0-59
             // tampilkam AM PM
-            var session = "am";
+            var ampm = "am";
             if (j == 0) {
                 j = 12;
             }
             if (j > 12) {
                 j = j - 12;
-                session = "pm";
+                ampm = "pm";
             }
             j = (j < 10) ? "0" + j : j;
             m = (m < 10) ? "0" + m : m;
             d = (d < 10) ? "0" + d : d;
 
-            var waktu = j + ":" + m + ":" + d + " " + session;
+            var waktu = j + ":" + m + ":" + d + " " + ampm;
             document.getElementById("jam").innerText = waktu;
             document.getElementById("jam").textContent = waktu;
 
