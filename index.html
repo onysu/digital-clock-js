@@ -59,7 +59,7 @@
         }
         
         .time span:last-child {
-            background: #2E94E3;
+            background: red;
             font-size: 30px;
             font-weight: 600;
             text-transform: uppercase;
@@ -75,16 +75,16 @@
     <!--digital clock start-->
     <div class="datetime">
         <div class="date">
-            <span id="dayname">Day</span>,
-            <span id="month">Month</span>
-            <span id="daynum">00</span>,
-            <span id="year">Year</span>
+            <span id="hari">Hari</span>,
+            <span id="bulan">Bulan</span>
+            <span id="tgl">Tanggal</span>,
+            <span id="tahun">Tahun</span>
         </div>
         <div class="time">
-            <span id="hour">00</span>:
-            <span id="minutes">00</span>:
-            <span id="seconds">00</span>
-            <span id="period">AM</span>
+            <span id="jam">00</span>:
+            <span id="menit">00</span>:
+            <span id="detik">00</span>
+            <span id="periode">AM</span>
         </div>
     </div>
     <!--digital clock end-->
@@ -118,7 +118,7 @@
 
             var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
             var week = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var ids = ["hari", "bulan", "tgl", "tahun", "jam", "menit", "detik", "periode"];
             var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
             for (var i = 0; i < ids.length; i++)
                 document.getElementById(ids[i]).firstChild.nodeValue = values[i];
