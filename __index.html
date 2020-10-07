@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock JS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        #jam {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jam"></div>
+
+    <!-- script -->
+    <script>
+        function tampilanJam() {
+            var jam = new Date();
+            var j = jam.getHours(); //0-23
+            var m = jam.getMinutes(); //0-59
+            var d = jam.getSeconds(); //0-59
+            // tampilkam AM PM
+            var ampm = "am";
+            if (j == 0) {
+                j = 12;
+            }
+            if (j > 12) {
+                j = j - 12;
+                ampm = "pm";
+            }
+            j = (j < 10) ? "0" + j : j;
+            m = (m < 10) ? "0" + m : m;
+            d = (d < 10) ? "0" + d : d;
+
+            var waktu = j + ":" + m + ":" + d + " " + ampm;
+            document.getElementById("jam").innerText = waktu;
+            document.getElementById("jam").textContent = waktu;
+
+            setTimeout(tampilanJam, 1000)
+        }
+        tampilanJam();
+    </script>
+</body>
+
+</html>
